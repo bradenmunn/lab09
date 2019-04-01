@@ -45,7 +45,7 @@
          * By doing this, we break up the equation n! into n! = n * (n-1)!.
          */
         //TODO
-	return 0;
+	    return 0;
 
     }
 
@@ -68,7 +68,7 @@
     public int fibonacci(int n)
     {
         //TODO
-	return 0;
+	    return 0;
     }
 
     
@@ -107,11 +107,14 @@
         public int getValue()
         {
     	    //TODO
+            return 0;
         }
     
         public ArrayList<Tree> getChildren()
         {
     	    //TODO
+            ArrayList<Tree> trees = new ArrayList<Tree>();
+            return  trees;
         }
     
         public void add(Tree child)
@@ -154,6 +157,7 @@
         }
         
     	//TODO
+        return 0;
     }
 
     /** **********************************************************************
@@ -167,6 +171,7 @@
     public int treeSum(Tree tree)
     {
     	//TODO
+        return 0;
     }
     
     /** **********************************************************************
