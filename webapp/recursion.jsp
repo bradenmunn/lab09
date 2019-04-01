@@ -33,19 +33,14 @@
          * Here is the base case (ending condition): value == 1.
          * This lets our recursion know when to stop.
          */
-        //TODO
-
-
-        /*
-         * Here is the recursive statement. The function calls itself when the 
-         * base case is not met.
-         * Something is altered when the function makes a new call to itself. 
-         * In this case, the value is updated by decrementing by 1.
-         * 
-         * By doing this, we break up the equation n! into n! = n * (n-1)!.
-         */
-        //TODO
-	    return 0;
+        if(value >= 2)
+        {
+            return value * factorial(value - 1);
+        }
+        else
+        {
+            return 1;
+        }
 
     }
 
