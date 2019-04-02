@@ -102,6 +102,7 @@
         public Tree(int value)
         {
     	    //TODO
+
             
         }
     
@@ -157,9 +158,10 @@
         {
     	    return 1;
         }
-        
-    	//TODO
-        return (height * branchingFactor) + nnaryTreeSize(branchingFactor, height - 1);
+        else
+        {
+            return Math.pow(branchingFactor, height - 1) + nnaryTreeSize(branchingFactor, height - 1);
+        }
     }
 
     /** **********************************************************************
