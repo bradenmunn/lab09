@@ -102,25 +102,28 @@
         public Tree(int value)
         {
     	    //TODO
+            this.value = value;
+            children = new ArrayList<Tree>();
         }
     
         public int getValue()
         {
             //TODO
-            return 0;
+            return value;
         }
     
         public ArrayList<Tree> getChildren()
         {
     	    //TODO 
-            ArrayList<Tree> trees = new ArrayList<Tree>();
+            //ArrayList<Tree> trees = new ArrayList<Tree>();
             
-            return  trees;
+            return children;
         }
     
         public void add(Tree child)
         {
     	    //TODO
+            children.add(child);
             
         }
     }
@@ -173,22 +176,22 @@
      */
     public int treeSum(Tree tree)
     {
-    	//TODO
-        ArrayList<Tree> children = null;
-        Tree currChild = null;
-        int i = 0;
         int sum = 0;
+        int numChildren = tree.getChildren().size();
+        Tree currChild;
 
-        sum += tree.getValue();
-        children = tree.getChildren();
-
-        for(i = 0; i < children.size(); ++i)
+    	if(numChildren == 0)
+            return tree.getValue();
+        else
         {
-            currChild = children.get(i);
-            sum += treeSum(currChild);
-        }
-
-        return sum;
+            for(int i = 0; i < numChildren; ++i)
+            {
+                currChild = tree.getChildren().get(i);
+                sum += currChild.getValue() + treeSum(currChild);
+            }
+            
+            return sum;
+        }   
     }
     
     /** **********************************************************************
