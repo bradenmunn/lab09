@@ -102,12 +102,11 @@
         public Tree(int value)
         {
     	    //TODO
-
-            
         }
     
         public int getValue()
         {
+            //TODO
             return 0;
         }
     
@@ -160,7 +159,7 @@
         }
         else
         {
-            return Math.pow(branchingFactor, height - 1) + nnaryTreeSize(branchingFactor, height - 1);
+            return (int)Math.pow(branchingFactor, height - 1) + nnaryTreeSize(branchingFactor, height - 1);
         }
     }
 
@@ -175,7 +174,21 @@
     public int treeSum(Tree tree)
     {
     	//TODO
-        return 0;
+        ArrayList<Tree> children = null;
+        Tree currChild = null;
+        int i = 0;
+        int sum = 0;
+
+        sum += tree.getValue();
+        children = tree.getChildren();
+
+        for(i = 0; i < children.size(); ++i)
+        {
+            currChild = children.get(i);
+            sum += treeSum(currChild);
+        }
+
+        return sum;
     }
     
     /** **********************************************************************
