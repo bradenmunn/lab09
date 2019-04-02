@@ -102,33 +102,26 @@
         public Tree(int value)
         {
     	    //TODO
-            this.value = value;
+            
         }
     
         public int getValue()
         {
-            return value;
+            return 0;
         }
     
         public ArrayList<Tree> getChildren()
         {
-    	    //TODO
+    	    //TODO 
             ArrayList<Tree> trees = new ArrayList<Tree>();
             
-            Tree currentTree = null;
-            while(!children.isEmpty())
-            {
-                currentTree = children.get(0);
-                trees.add(currentTree);
-                children.remove(0);
-            }
             return  trees;
         }
     
         public void add(Tree child)
         {
     	    //TODO
-            children.add(child);
+            
         }
     }
     
@@ -166,7 +159,7 @@
         }
         
     	//TODO
-        return (height * branchingFactor) * nnaryTreeSize(branchingFactor, height - 1);
+        return (height * branchingFactor) + nnaryTreeSize(branchingFactor, height - 1);
     }
 
     /** **********************************************************************
