@@ -180,6 +180,7 @@
         int numChildren = tree.getChildren().size();
         Tree currChild;
 
+        
     	if(numChildren == 0)
             return tree.getValue();
         else
@@ -187,10 +188,10 @@
             for(int i = 0; i < numChildren; ++i)
             {
                 currChild = tree.getChildren().get(i);
-                sum += currChild.getValue() + treeSum(currChild);
+                sum += treeSum(currChild);
             }
             
-            return sum;
+            return sum + tree.getValue();
         }   
     }
     
