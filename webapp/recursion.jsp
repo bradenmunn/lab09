@@ -63,7 +63,12 @@
     public int fibonacci(int n)
     {
         //TODO
-	    return 0;
+        if(n == 0)
+            return 0;
+        else if(n == 1)
+            return 1;
+	    else
+            return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     
@@ -97,24 +102,33 @@
         public Tree(int value)
         {
     	    //TODO
+            this.value = value;
         }
     
         public int getValue()
         {
-    	    //TODO
-            return 0;
+            return value;
         }
     
         public ArrayList<Tree> getChildren()
         {
     	    //TODO
             ArrayList<Tree> trees = new ArrayList<Tree>();
+            
+            Tree currentTree = null;
+            while(!children.isEmpty())
+            {
+                currentTree = children.get(0);
+                trees.add(currentTree);
+                children.remove(0);
+            }
             return  trees;
         }
     
         public void add(Tree child)
         {
     	    //TODO
+            children.add(child);
         }
     }
     
@@ -148,11 +162,11 @@
     {
         if (height == 1) 
         {
-    	    //TODO
+    	    return 1;
         }
         
     	//TODO
-        return 0;
+        return (height * branchingFactor) * nnaryTreeSize(branchingFactor, height - 1);
     }
 
     /** **********************************************************************
